@@ -1,17 +1,17 @@
 (ns zkimcom.feeds
-  (:use [clojure.contrib.pprint])
+  (:use [clojure.pprint])
   (:require [clojure.xml :as xml]
 	    [clojure.zip :as zip]
 	    [clojure.contrib.zip-filter.xml :as zf]
-	    [clojure.contrib.sql :as sql]
             [somnium.congomongo :as mongo]))
+
+(require '[clojure.contrib.sql])
+
 ;; Database
 
 (def reader-feed-url "http://www.google.com/reader/public/atom/user/14149351528493136073/state/com.google/broadcast")
 (def twitter-feed-url "http://twitter.com/statuses/user_timeline/14194705.rss")
 (def delicious-feed-url "http://feeds.delicious.com/v2/rss/zkim?count=15")
-
-(mongo/mongo! :db :zkimcom)
 
 (defn xml-source-to-zip [url]
   (zip/xml-zip (xml/parse url)))

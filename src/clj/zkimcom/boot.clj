@@ -8,31 +8,26 @@
                          session)
         [ring.middleware.session.memory])
   (:require [net.cgrand.moustache :as mou]
-            [somnium.congomongo :as mongo]
-            [nsfw.middleware :as nsfwm]
-            [zkimcom.actions :as actions]
-            [nsfw.server :as server]))
-
+            [nsfw.middleware :as nsfmw]
+            [zkimcom.actions :as actions]))
 
 (def session-store (atom {}))
 
-(mongo/mongo! :db :zkimcom)
+(def routes
+  (mou/app
+   [""] actions/index
+   ["recent-projects"] actions/recent-projects
+   ["featured-work"] actions/featured-work
+   [&] actions/four-oh-four))
 
 (def entry-handler
-  (-> (var actions/routes)
+  (-> (var routes)
       (wrap-session {:store (memory-store session-store)})
       (wrap-keyword-params)
       (wrap-nested-params)
       (wrap-params)
       (wrap-file "resources/public")
       (wrap-file-info)
-      (nsfwm/wrap-log-request)
-      (nsfwm/wrap-stacktrace)))
-
-(defn start-server [port]
-  (server/start (var entry-handler) port))
-
-
-
-
+      (nsfmw/wrap-log-request)
+      (nsfmw/wrap-stacktrace)))
 
