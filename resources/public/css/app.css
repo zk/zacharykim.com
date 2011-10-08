@@ -21,6 +21,11 @@ a:visited {
     color: #44aaee;
 }
 
+span.redact {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
 div.flash_message {
     text-align: center;
 }

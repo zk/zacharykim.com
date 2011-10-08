@@ -25,7 +25,13 @@
     [:div {:class "grid_10"}
      (nav)
      [:h1 "zacharykim.com"]
-     [:p "The professional portfolio of Zachary Kim, a software developer located in Denver, Colorado."]]
+     [:p "The professional portfolio of Zachary Kim, a software developer located in "
+      [:span.redact "Honolulu,"]
+      " "
+      [:span.redact "Denver,"]
+      " "
+      "San Francisco, CA"
+      "."]]
     [:div {:class "grid_16"}
      [:hr]]]
    [:div {:class "clear"}]])
@@ -88,8 +94,19 @@
 
 (defn work-exp []
   [:div {:class "work_experience"}
-   [:h3 "Work Experience"]
+   [:h3 "Work"]
    [:ul
+    [:li
+     [:h4 "10/11 - Present"]
+     [:h5 "Sr. Software Engineer"]
+     [:p [:a {:href "http://runa.com"} "Runa"]]]
+    [:li
+     [:h4 "10/10 - 10/11"]
+     [:p "Contract"]]
+    [:li
+     [:h4 "3/10 - 10/10"]
+     [:h5 "Founder"]
+     [:p "Security Blanket"]]
     [:li
      [:h4 "10/08 - 2/10"]
      [:h5 "Chief Architect"]
@@ -103,11 +120,11 @@
        "Genesee Academy"]]]
     [:li
      [:h4 "9/05 - 4/07"]
-     [:p "Freelance"]]
+     [:p "Contract"]]
     [:li
      [:hr]
-     [:h4 "5/05 - Present"]
-     [:h5 "Research Assistant, Neurosurgery"]
+     [:h4 "5/05 - 10/11"]
+     [:h5 "Research, Neurosurgery"]
      [:p
       [:a {:href "http://cuneurosurgery.com/"}
        "University of Colorado Health Sciences Center"]]]]])
@@ -277,5 +294,3 @@
      (footer)]]))
 
 
-(defn four-oh-four []
-  (html "404o"))
