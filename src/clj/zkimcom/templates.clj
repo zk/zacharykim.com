@@ -258,6 +258,19 @@
    :content [:div
              [:p "An experimental Clojure(ish)-to-JavaScript compiler with compile-on-save, automatic dependency management, and Leiningen integration. "]]))
 
+(defn pairio []
+  (project
+   :href "https://pair.io"
+   :name "pair.io"
+   :tech "Clojure, Ruby, Cljs, MongoDB, Heroku"
+   :image "pairio"
+   :image-title "Pair.io Session Page"
+   :content [:div
+             [:p "On-demand, collaboration-friendly dev environments for your github repo."]
+             [:ul
+              [:li [:a {:href "http://www.youtube.com/watch?v=YbQb_8EdfU8"}
+                    "5 min overview video."]]]]))
+
 (defn featured-work []
   (html
    (doctype :html5)
@@ -285,6 +298,7 @@
             (nav)
             [:div {:class "featured_work"}
              [:h1 "Featured Work"]
+             (pairio)
              (clojuredocs)
              (mockdbs)
              (cljs)
