@@ -4,4 +4,4 @@
 
 (defonce s (server/make (var boot/entry-handler)))
 
-(server/start s :port 8080 :max-threads 20)
+(server/start s :port (Integer/parseInt (or (System/getenv "PORT") "8080")) :max-threads 20)
