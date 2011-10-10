@@ -2,8 +2,8 @@
   :description
   "The Developer's Portfolio of Zachary Kim.  This site can be found at zacharykim.com."
   :dependencies [[org.clojure/clojure "1.3.0"]
+                 [org.clojure/data.zip "0.1.0"]
                  [nsfw "0.2.4"]
-                 [congomongo "0.1.7-SNAPSHOT"]
                  [joda-time/joda-time "1.6"]]
   :dev-dependencies [[swank-clojure "1.4.0-SNAPSHOT"]
                      [marginalia "0.3.2"]

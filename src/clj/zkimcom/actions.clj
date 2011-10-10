@@ -5,7 +5,7 @@
             [zkimcom.social :as social]))
 
 (defn index [req]
-  (render tpls/index [] #_(social/latest! 5)))
+  (render tpls/index (social/latest! 5)))
 
 (defn recent-projects [req]
   (redirect "/featured-work"))
