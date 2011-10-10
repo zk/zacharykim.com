@@ -163,10 +163,6 @@
        (work-exp)]]
      (footer)]]))
 
-(defn project [& content]
-  [:div {:class "project"}
-   content])
-
 (defn project [& opts]
   ":href :name :tech :image :image-thumb :image-title :content"
   (let [opts (apply hash-map opts)]
@@ -177,7 +173,7 @@
       [:h6 (:tech opts)]
       (href (image-url (str "recent_projects/" (:image opts) ".png"))
             (image (str "recent_projects/" (:image opts) "_thumb.png")
-                   :class "project_image"
+                   :class "project_image lightbox"
                    :alt (:image-title opts))
             :class "lightbox"
             :title (:image-title opts))
@@ -281,7 +277,11 @@
      (meta-tag "google-site-verification" "8YA4jEQCCmmF3PZriyv6oErL3IPaMJgI0TCipMYSfLk")
      [:link {:rel "icon" :href "favicon.ico" :type "image/x-icon"}]
      [:link {:rel "shortcut icon" :href "favicon.ico" :type "image/x-icon"}]
-     (include-css :reset :text :960 :app)
+     (include-css :reset :text :960 :app :jquery.lightbox-0.5)
+     [:script {:type "text/javascript" :src "/js/jquery-1.4.4.min.js"}]
+     [:script {:type "text/javascript" :src "/js/jquery.lightbox-0.5.pack.js"}]
+     [:script {:type "text/javascript"}
+      "$(document).ready(function() { $('a.lightbox').lightBox(); });"]
      (ganalytics)
      [:title "Zachary Kim's Portfolio"]]
     [:body

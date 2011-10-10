@@ -23,7 +23,7 @@ a:visited {
 
 span.redact {
     text-decoration: line-through;
-    color: #ccc;
+    color: #aaa;
 }
 
 div.flash_message {
