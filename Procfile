@@ -1,1 +1,1 @@
-web: lein run -m pairio.heroku
+web: lein run -m zkimcom.heroku.web
