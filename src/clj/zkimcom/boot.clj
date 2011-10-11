@@ -13,15 +13,15 @@
 
 (def session-store (atom {}))
 
-(def routes
+(defn routes [latest-social-content-atom]
   (mou/app
-   [""] actions/index
+   [""] (actions/index latest-social-content-atom)
    ["recent-projects"] actions/recent-projects
    ["featured-work"] actions/featured-work
    [&] actions/four-oh-four))
 
-(def entry-handler
-  (-> (var routes)
+(defn entry-handler [latest-social-content-atom]
+  (-> (routes latest-social-content-atom)
       (wrap-session {:store (memory-store session-store)})
       (wrap-keyword-params)
       (wrap-nested-params)

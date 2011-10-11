@@ -14,8 +14,8 @@
 (defn update-social [latest-social-content-atom
                      reader-feed-url
                      twitter-feed-url]
-  (let [rdr-entries (feeds/get-reader-entries reader-feed-url)
-        twt-entries (feeds/get-twitter-entries twitter-feed-url)]
+  (let [rdr-entries (feeds/query-reader reader-feed-url)
+        twt-entries (feeds/query-twitter twitter-feed-url)]
     (swap! latest-social-content-atom
            (fn [latest]
              (->> (concat latest
@@ -41,8 +41,9 @@
       (reset! control false))))
 
 
+(def entry-handler (boot/entry-handler latest-social-content))
 
-(defonce s (server/make (var boot/entry-handler)))
+(defonce s (server/make (var entry-handler)))
 
 (server/start s :port (Integer/parseInt (or (System/getenv "PORT") "8080")) :max-threads 20)
 
