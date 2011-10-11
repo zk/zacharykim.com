@@ -21,6 +21,7 @@
              (->> (concat latest
                           rdr-entries
                           twt-entries)
+                  distinct
                   (sort-by :timestamp)
                   (reverse)
                   (take 5))))))
