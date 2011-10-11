@@ -6,9 +6,6 @@
 
 ;; Database
 
-(def reader-feed-url "http://www.google.com/reader/public/atom/user/14149351528493136073/state/com.google/broadcast")
-(def twitter-feed-url "http://twitter.com/statuses/user_timeline/14194705.rss")
-(def delicious-feed-url "http://feeds.delicious.com/v2/rss/zkim?count=15")
 
 (defn xml-source-to-zip [url]
   (zip/xml-zip (xml/parse url)))
@@ -32,7 +29,7 @@
 
 ;;   Parsing
 
-(defn get-reader-entries [feed-url]
+(defn query-reader [feed-url]
   (->> (zf/xml-> (xml-source-to-zip feed-url) :entry)
        (map 
         (fn [entry]
@@ -50,7 +47,7 @@
 ;; Twitter
 ;;   Database
 
-(defn get-twitter-entries [feed-url]
+(defn query-twitter [feed-url]
   (let [source-zip (xml-source-to-zip feed-url)
 	poster (zf/xml1-> source-zip :channel :link zf/text)
         entries (zf/xml-> source-zip :channel :item)]
