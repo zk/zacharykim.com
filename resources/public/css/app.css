@@ -31,9 +31,13 @@ div.flash_message {
 }
 
 h1 {
-    font-size: 40pt;    
+    font-size: 35pt;    
     font-weight: 400;
     margin-bottom: 14px;
+}
+
+h2 {
+    font-weight: 400;
 }
 
 .header_spacer {
@@ -250,5 +254,5 @@ div.right-pane {
 }
 
 .header_wrapper .site_logo {
-    margin-bottom: 20px;
+    margin-bottom: 27px;
 }
