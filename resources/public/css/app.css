@@ -256,3 +256,23 @@ div.right-pane {
 .header_wrapper .site_logo {
     margin-bottom: 27px;
 }
+
+.project .github-link {
+    margin-bottom: -1px;
+}
+
+.project .links {
+}
+
+.project .nav-separator {
+    color: #ccc;
+}
+
+.pproject:hover {
+    background-color: #fafafa;
+}
+
+.project .tech {
+    font-size: 18px;
+    color: #888;
+}

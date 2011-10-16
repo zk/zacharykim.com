@@ -46,8 +46,6 @@
      [:a {:href "http://github.com/zkim"} "github"]]
     [:li {:class "twitter"}
      [:a {:href "http://twitter.com/napple"} "@napple"]]
-    [:li {:class "delicious"}
-     [:a {:href "http://del.icio.us/zkim"} "Del.icio.us Bookmarks"]]
     [:li {:class "linkedin"}
      [:a {:href "http://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Linked In Profile"]]
     [:li {:class "google_reader"}
@@ -168,9 +166,15 @@
   (let [opts (apply hash-map opts)]
     (html
      [:div {:class "project"}
-       (href (:href opts)
-             [:h3 (:name opts)])
-      [:h6 (:tech opts)]
+      (if (:href opts)
+        [:a {:href (:href opts)}
+         [:h2 (:name opts)]]
+        [:h2 (:name opts)])
+      [:div {:class "links"}
+       (when (:github opts)
+         (href (:github opts)
+               "github"))]
+      [:div.tech (:tech opts)]
       (href (image-url (str "recent_projects/" (:image opts) ".png"))
             (image (str "recent_projects/" (:image opts) "_thumb.png")
                    :class "project_image lightbox"
@@ -179,7 +183,10 @@
                    :height (second (:thumb-size opts)))
             :class "lightbox"
             :title (:image-title opts))
-      (:content opts)
+      [:div.content
+       
+
+       (:content opts)]
       [:div {:class "clear"}]])))
 
 
@@ -254,28 +261,28 @@
 
 (defn cljs []
   (project
-   :href "http://github.com/zkim/cljs"
-   :name "cljs"
-   :tech "Clojure"
-   :image "cljspad"
-   :image-title "CljsPad - A Live-Console For Cljs"
-   :thumb-size [281 224]
-   :content [:div
-             [:p "An experimental Clojure(ish)-to-JavaScript compiler with compile-on-save, automatic dependency management, and Leiningen integration. "]]))
+    :href "http://github.com/zkim/cljs"
+    :name "cljs"
+    :tech "Clojure"
+    :image "cljspad"
+    :image-title "CljsPad - A Live-Console For Cljs"
+    :thumb-size [281 224]
+    :content [:div
+              [:p "An experimental Clojure(ish)-to-JavaScript compiler with compile-on-save, automatic dependency management, and Leiningen integration. "]]))
 
 (defn pairio []
   (project
-   :href "https://pair.io"
-   :name "pair.io"
-   :tech "Clojure, Ruby, Cljs, MongoDB, Heroku"
-   :image "pairio"
-   :image-title "Pair.io Session Page"
-   :thumb-size [281 215]
-   :content [:div
-             [:p "On-demand, collaboration-friendly dev environments for your github repo."]
-             [:ul
-              [:li [:a {:href "http://www.youtube.com/watch?v=YbQb_8EdfU8"}
-                    "5 min overview video."]]]]))
+    :href "https://pair.io"
+    :name "pair.io"
+    :tech "Clojure, Ruby, Cljs, MongoDB, Heroku"
+    :image "pairio"
+    :image-title "Pair.io Session Page"
+    :thumb-size [281 215]
+    :content [:div
+              [:p "On-demand, collaboration-friendly dev environments for your github repo."]
+              [:ul
+               [:li [:a {:href "http://www.youtube.com/watch?v=YbQb_8EdfU8"}
+                     "5 min overview video."]]]]))
 
 (defn featured-work []
   (html
