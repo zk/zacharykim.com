@@ -315,11 +315,11 @@
             (nav)
             [:div {:class "featured_work"}
              [:h1 "Featured Work"]
+             (celltracker)
              (pairio)
              (clojuredocs)
              (mockdbs)
              (cljs)
-             (celltracker)
              (jotting)
              (rapidace)]))
      (footer)]]))
