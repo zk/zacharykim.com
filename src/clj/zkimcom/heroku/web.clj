@@ -42,12 +42,13 @@
       (reset! control false))))
 
 
+(defonce s (server/make (boot/entry-handler latest-social-content)))
 
-(def entry-handler (boot/entry-handler latest-social-content))
+(server/start
+ s
+ :port (Integer/parseInt (or (System/getenv "PORT") "8080"))
+ :max-threads 20)
 
-(defonce s (server/make (var entry-handler)))
-
-(server/start s :port (Integer/parseInt (or (System/getenv "PORT") "8080")) :max-threads 20)
 
 (update-social latest-social-content twitter-feed-url reader-feed-url)
 (start-updater!)

@@ -28,6 +28,5 @@
       (wrap-params)
       (wrap-file "resources/public")
       (wrap-file-info)
-      (nsfmw/wrap-log-request)
       (nsfmw/wrap-stacktrace)))
 

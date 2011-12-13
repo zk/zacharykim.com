@@ -25,7 +25,7 @@
     [:div {:class "grid_10"}
      (nav)
      [:h1 "zacharykim.com"]
-     [:p "The professional portfolio of Zachary Kim, a software developer located in "
+     [:p "The professional portfolio of Zachary Kim, a software developer in "
       [:span.redact "Honolulu,"]
       " "
       [:span.redact "Denver,"]
