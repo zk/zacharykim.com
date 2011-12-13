@@ -95,10 +95,6 @@
    [:h3 "Work"]
    [:ul
     [:li
-     [:h4 "10/11 - Present"]
-     [:h5 "Sr. Software Engineer"]
-     [:p [:a {:href "http://runa.com"} "Runa"]]]
-    [:li
      [:h4 "10/10 - 10/11"]
      [:p "Contract"]]
     [:li
