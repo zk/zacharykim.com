@@ -45,7 +45,7 @@
     [:li {:class "github"}
      [:a {:href "http://github.com/zkim"} "github"]]
     [:li {:class "twitter"}
-     [:a {:href "http://twitter.com/napple"} "@napple"]]
+     [:a {:href "http://twitter.com/_zkim"} "@_zkim"]]
     [:li {:class "linkedin"}
      [:a {:href "http://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Linked In Profile"]]
     [:li {:class "google_reader"}
