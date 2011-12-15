@@ -240,7 +240,7 @@
    :content [:div
              [:p "CellTracker is a pseudo-3D visualization program used to aid in the visualization of recorded data from a neurosurgical procedure called Deep Brain Stimulation. Micro-electrode recordings (MERs) are superimposed on a brain map called the Schaltenbrand-Wahren atlas, which is displayed as 2D slices in 3D space. This allows the surgeon to visualize previously recorded data in context."]
              [:p "A "
-              (href "http://zacharykim.com/downloads/Poster_3DSTN_2008_Final.pdf"
+              (href "http://dl.dropbox.com/u/43368535/Poster_3DSTN_2008_Final.pdf"
                     "poster")
               " of our procedures and findings was presented at the 2008 International Movement Disorders Congress in Chicago, IL. I was part of the team that was invited to present there, and was chosen as one a handful of a total of roughly 900 abstracts to be specially featured."]]))
 
