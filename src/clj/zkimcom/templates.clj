@@ -95,6 +95,10 @@
    [:h3 "Work"]
    [:ul
     [:li
+     [:h4 "1/12 - Present"]
+     [:h5 "Director of Platform"]
+     [:p [:a {:href "https://zaarly.com"} "Zaarly"]]]
+    [:li
      [:h4 "10/10 - 10/11"]
      [:p "Contract"]]
     [:li
