@@ -12,4 +12,5 @@
   :source-paths ["src/clj"]
   :cljs {:source-path "src/cljs"
          :source-output-path "resources/public/js"
-         :source-libs []})
+         :source-libs []}
+  :min-lein-version "2.0.0")
