@@ -5,3 +5,4 @@ classes
 .DS_Store
 *.war
 .lein-deps-sum
+target
