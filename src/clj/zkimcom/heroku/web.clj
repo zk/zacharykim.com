@@ -6,8 +6,9 @@
 
 (def reader-feed-url
   "http://www.google.com/reader/public/atom/user/14149351528493136073/state/com.google/broadcast")
+
 (def twitter-feed-url
-  "http://twitter.com/statuses/user_timeline/14194705.rss")
+  "https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=heyzk")
 
 (def latest-social-content (atom []))
 
@@ -48,7 +49,6 @@
  s
  :port (Integer/parseInt (or (System/getenv "PORT") "8080"))
  :max-threads 20)
-
 
 (update-social latest-social-content twitter-feed-url reader-feed-url)
 (start-updater!)
