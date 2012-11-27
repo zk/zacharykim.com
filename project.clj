@@ -9,7 +9,7 @@
                      [marginalia "0.3.2"]
                      [cljs "0.2.2"]
                      [lein-cljs "0.2.2"]]
-  :source-path "src/clj"
+  :source-paths ["src/clj"]
   :cljs {:source-path "src/cljs"
          :source-output-path "resources/public/js"
          :source-libs []})
