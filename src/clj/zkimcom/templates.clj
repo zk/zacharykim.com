@@ -43,7 +43,7 @@
     [:li {:class "email"}
      [:a {:href "mailto:zack@zacharykim.com"} "zack@zacharykim.com"]]
     [:li {:class "github"}
-     [:a {:href "http://github.com/zkim"} "github"]]
+     [:a {:href "http://github.com/zk"} "github"]]
     [:li {:class "twitter"}
      [:a {:href "http://twitter.com/heyzk"} "@heyzk"]]
     [:li {:class "linkedin"}
@@ -95,7 +95,7 @@
    [:ul
     [:li
      [:h4 "1/12 - Present"]
-     [:h5 "Director of Platform"]
+     [:h5 "Director of Engineering"]
      [:p [:a {:href "https://zaarly.com"} "Zaarly"]]]
     [:li
      [:h4 "10/10 - 10/11"]
@@ -183,7 +183,7 @@
             :class "lightbox"
             :title (:image-title opts))
       [:div.content
-       
+
 
        (:content opts)]
       [:div {:class "clear"}]])))
@@ -216,7 +216,7 @@
    :image "clojuredocs_screenshot"
    :image-title "ClojureDocs Home Page"
    :thumb-size [281 203]
-   :content [:p 
+   :content [:p
              "A community-powered documentation and examples repository for the "
              (href "http://clojuredocs.org" "Clojure programming language.")]))
 
@@ -260,7 +260,7 @@
 
 (defn cljs []
   (project
-    :href "http://github.com/zkim/cljs"
+    :href "http://github.com/zk/cljs"
     :name "cljs"
     :tech "Clojure"
     :image "cljspad"
@@ -270,18 +270,20 @@
               [:p "An experimental Clojure(ish)-to-JavaScript compiler with compile-on-save, automatic dependency management, and Leiningen integration. "]]))
 
 (defn pairio []
-  (project
-    :href "https://pair.io"
-    :name "pair.io"
-    :tech "Clojure, Ruby, Cljs, MongoDB, Heroku"
-    :image "pairio"
-    :image-title "Pair.io Session Page"
-    :thumb-size [281 215]
-    :content [:div
-              [:p "On-demand, collaboration-friendly dev environments for your github repo."]
-              [:ul
-               [:li [:a {:href "http://www.youtube.com/watch?v=YbQb_8EdfU8"}
-                     "5 min overview video."]]]]))
+  (html
+   [:div {:class "project"}
+    [:a {:href "https://pair.io"}
+     [:h2 "pair.io"]]
+    [:div {:class "links"}]
+    [:div.tech "Clojure, Ruby, Cljs, MongoDB, Heroku"]
+    [:div.content
+     [:div
+      [:p "On-demand, collaboration-friendly dev environments for your github repo."]]
+     [:iframe {:width 580 :height 435
+               :src "http://www.youtube.com/embed/YbQb_8EdfU8"
+               :framborder 0
+               :allowfullscreen "allowfullscreen"}]]
+    [:div {:class "clear"}]]))
 
 (defn featured-work []
   (html
@@ -322,5 +324,3 @@
              (jotting)
              (rapidace)]))
      (footer)]]))
-
-

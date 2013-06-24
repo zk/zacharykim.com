@@ -12,7 +12,7 @@ Clojure, ring, moustache, hiccup, etc.  Deployed on Heroku.
 
 ### Development
 
-    git clone https://zkim@github.com/zkim/zacharykim.com.git
+    git clone https://github.com/zk/zacharykim.com.git
     cd ./zacharykim.com
     lein deps
     lein run -m zkimcom.heroku.web
@@ -20,7 +20,7 @@ Clojure, ring, moustache, hiccup, etc.  Deployed on Heroku.
 ### Production
 
     # http://devcenter.heroku.com/articles/quickstart
-    
+
     heroku create --stack cedar
     git push heroku master
 
