@@ -47,6 +47,4 @@
     (server/start
      s
      :port (Integer/parseInt (or (System/getenv "PORT") "8080"))
-     :max-threads 20)
-    (update-social latest-social-content twitter-feed-url reader-feed-url)
-    (start-updater!)))
+     :max-threads 20)))

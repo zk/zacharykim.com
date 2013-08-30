@@ -31,9 +31,7 @@
       [:span.redact "Denver,"]
       " "
       "San Francisco, CA"
-      "."]]
-    [:div {:class "grid_16"}
-     [:hr]]]
+      "."]]]
    [:div {:class "clear"}]])
 
 (defn contact-me []
@@ -153,11 +151,11 @@
      (landing-header)
      [:div {:class "container_16"}
       [:div {:class "grid_5 prefix_1"}
-       (contact-me)]
+       "&nbsp;"]
       [:div {:class "grid_4 suffix_2"}
-       (latest-content social-content)]
+       (work-exp)]
       [:div {:class "grid_4"}
-       (work-exp)]]
+       (contact-me)]]
      (footer)]]))
 
 (defn project [& opts]
@@ -308,10 +306,7 @@
       (grid 6
             [:div {:class "header_wrapper"}
              (href "/"
-                   (image "site_logo_big.png" :class "site_logo" :width 296 :height 296))
-             [:hr]
-             [:div {:class "grid_5 prefix_1 alpha omega contact_me"}
-              (contact-me)]])
+                   (image "site_logo_big.png" :class "site_logo" :width 296 :height 296))])
       (grid 10
             (nav)
             [:div {:class "featured_work"}
