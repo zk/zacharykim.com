@@ -245,6 +245,25 @@
                     "poster")
               " of our procedures and findings was presented at the 2008 International Movement Disorders Congress in Chicago, IL. I was part of the team that was invited to present there, and was chosen as one a handful of a total of roughly 900 abstracts to be specially featured."]]))
 
+(defn inky []
+  (project
+    :href "http://inky.cc"
+    :name "Inky"
+    :tech "Clojure, ClojureScript"
+    :image "inky"
+    :thumb-size [281 201]
+    :content [:div
+              [:p
+               "Inky.cc is a place to compile and host short snippets of ClojureScript, &#224; la "
+               [:a {:href "http://bl.ocks.org"} "blocks"]
+               ", "
+               [:a {:href "http://jsfiddle.net/"} "jsfiddle"]
+               ", and "
+               [:a {:href "http://codepen.io/"} "codepen"]
+               "."
+               " We'll bring the environment, you bring the code."]
+              [:p "Compilation jobs are shared by N logical processes and the results are stored on S3 for quick delivery."]]))
+
 (defn rapidace []
   (project
    :name "RapidACE 3D Data Modeling Visualization"
@@ -311,6 +330,7 @@
             (nav)
             [:div {:class "featured_work"}
              [:h1 "Featured Work"]
+             (inky)
              (celltracker)
              (pairio)
              (clojuredocs)
