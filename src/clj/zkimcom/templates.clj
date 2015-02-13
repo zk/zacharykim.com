@@ -45,10 +45,7 @@
     [:li {:class "twitter"}
      [:a {:href "http://twitter.com/heyzk"} "@heyzk"]]
     [:li {:class "linkedin"}
-     [:a {:href "http://www.linkedin.com/pub/zachary-kim/3/a48/456"} "LinkedIn Profile"]]
-    [:li {:class "google_reader"}
-     [:a {:href "http://www.google.com/reader/shared/14149351528493136073"}
-      "Shared Google Reader"]]]])
+     [:a {:href "http://www.linkedin.com/pub/zachary-kim/3/a48/456"} "LinkedIn Profile"]]]])
 
 (defmulti render-social-content :type :default :default)
 
