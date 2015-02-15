@@ -290,8 +290,7 @@
 (defn pairio []
   (html
    [:div {:class "project"}
-    [:a {:href "https://pair.io"}
-     [:h2 "pair.io"]]
+    [:h2 "pair.io"]
     [:div {:class "links"}]
     [:div.tech "Clojure, Ruby, Cljs, MongoDB, Heroku"]
     [:div.content
