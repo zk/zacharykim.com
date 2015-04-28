@@ -39,7 +39,7 @@
    [:h3 "Contact Me"]
    [:ul
     [:li {:class "email"}
-     [:a {:href "mailto:zack@zacharykim.com"} "zack@zacharykim.com"]]
+     [:a {:href "mailto:zachary.kim@gmail.com"} "zachary.kim@gmail.com"]]
     [:li {:class "github"}
      [:a {:href "http://github.com/zk"} "github"]]
     [:li {:class "twitter"}
