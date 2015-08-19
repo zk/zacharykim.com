@@ -1,0 +1,75 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+body .logo {
+  margin-left: auto;
+  background-color: #79D6FD;
+  margin-top: 70px;
+  max-width: 100%;
+  padding: 10px;
+  display: block;
+  margin-right: auto;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+body .heading {
+  font-weight: 300;
+  font-size: 33px;
+  line-height: 130%;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+body .heading strong {
+  font-weight: 500;
+}
+
+body .redact {
+  text-decoration: line-through;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+body .above-fold {
+  padding-top: 50px;
+  min-height: 100%;
+}
+
+body .callout {
+  margin-bottom: 60px;
+}
+
+body .contact {
+  text-align: left;
+}
+
+body .contact .contact-logo {
+  height: 30px;
+  margin-left: 0;
+  margin: 0 30px;
+}
+
+body .nav {
+  margin-bottom: 25px;
+}
+
+body .nav ul {
+  padding-left: 0;
+}
+
+body .nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+body .nav ul li a {
+  font-size: 18px;
+  color: #ccc;
+}
