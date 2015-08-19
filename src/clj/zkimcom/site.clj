@@ -43,7 +43,70 @@
       [:li {:display 'inline-block
             :margin-right "20px"}
        [:a {:font-size "18px"
-            :color "#ccc"}]]]]]])
+            :color "#ccc"}]]]]
+    [:.featured
+     [:.featured-work-item
+      [:.header
+       {:width "100%"
+        :height "300px"
+        :background-size 'cover
+        :background-position 'center
+        :color 'white
+        :position 'relative
+        :margin-bottom "30px"}
+       [:.caption {:position 'absolute
+                   :bottom 0
+                   :left 0
+                   :right 0
+                   :margin 0
+                   :padding "10px"
+                   ;;:background-color "rgba(0,0,0,0.5)"
+                   :background "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1))"}
+        [:h3 :h4 {:margin 0}]
+        [:h4 {:margin-top "5px"
+              :text-transform 'uppercase
+              :font-weight 300
+              :font-size "16px"}]]]
+      [:p {:font-size "18px"}]]
+     [:.divider {:text-align 'center
+                 :margin "60px 0"}]
+     [:.mockdbs
+      [:.header {:color "black"}
+       [:.caption {:background "linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1))"}]]]]]])
+
+(defn featured-section []
+  [:div.section.featured
+   [:div.container
+    [:div.col-sm-12.col-md-10.col-md-offset-1
+     [:h2 "Featured Work & Talks"]
+
+     [:div.featured-work-item.cuba
+      [:div.header {:style "background-image: url('/images/cuba2.jpg'); background-position: bottom;"}
+       [:div.caption
+        [:h3 "Technology and Entrepreneurship in Silicon Valley"]
+        [:h4 "Havana, July 2015"]]]
+      [:p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."]]
+     [:div.divider "---"]
+     [:div.featured-work-item
+      [:div.header {:style "background-image: url('/images/recent_projects/celltracker.png');"}
+       [:div.caption
+        [:h3 "Intra-Op 3D Visualizer for Deep Brain Stimulation"]]]
+      [:p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."]
+      [:p "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"]]
+     [:div.divider "---"]
+     [:div.featured-work-item.mockdbs
+      [:div.header {:style "background-image: url('/images/recent_projects/mockdbs.png');"}
+       [:div.caption
+        [:h3 "Intra-Op Neuronal Signal Simulator"]]]
+      [:p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."]
+      [:p "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"]]
+     [:div.divider "---"]
+     [:div.featured-work-item.cuba
+      [:div.header {:style "background-image: url('/images/veedev.jpg'); background-position: bottom;"}
+       [:div.caption
+        [:h3 "No-Strings Mobile App Development in Clojure"]
+        [:h4 "Portland, March 2015"]]]
+      [:p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."]]]]])
 
 (def index
   (hp/html5
@@ -63,8 +126,7 @@
            [:div.nav
             [:ul
              [:li [:a {:href "#"} "About"]]
-             [:li [:a {:href "#"} "Featured Work"]]
-             [:li [:a {:href "#"} "Speaking"]]]]
+             [:li [:a {:href "#"} "Featured Work & Talks"]]]]
            [:div.callout
             [:h1.heading "Hey there. "]
             [:h1.heading
@@ -87,6 +149,8 @@
       [:div.container
        [:div.col-sm-12.col-md-10.col-md-offset-1
         [:h1 "HI"]]]]
+     (featured-section)
+     (repeat 20 [:br])
      [:script {:type "text/javascript" :src "cljs/app.js"}]]))
 
 (def pages

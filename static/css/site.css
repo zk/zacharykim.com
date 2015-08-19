@@ -73,3 +73,51 @@ body .nav ul li a {
   font-size: 18px;
   color: #ccc;
 }
+
+body .featured .featured-work-item .header {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+body .featured .featured-work-item .header .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px;
+  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+}
+
+body .featured .featured-work-item .header .caption h3, body .featured .featured-work-item .header .caption h4 {
+  margin: 0;
+}
+
+body .featured .featured-work-item .header .caption h4 {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+body .featured .featured-work-item p {
+  font-size: 18px;
+}
+
+body .featured .divider {
+  text-align: center;
+  margin: 60px 0;
+}
+
+body .featured .mockdbs .header {
+  color: black;
+}
+
+body .featured .mockdbs .header .caption {
+  background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+}
