@@ -7,6 +7,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+body .nowrap {
+  white-space: nowrap;
+}
+
 body .logo {
   margin-left: auto;
   background-color: #79D6FD;
@@ -74,6 +78,30 @@ body .nav ul li a {
   color: #ccc;
 }
 
+body .section h2 {
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+body .about h2 {
+  background-color: #FF5722;
+}
+
+body .featured h2 {
+  background-color: #9C27B0;
+  margin-bottom: 50px;
+}
+
+body .featured .featured-work-item.light .header {
+  color: black;
+}
+
+body .featured .featured-work-item.light .header .caption {
+  background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,1));
+  padding-top: 20px;
+}
+
 body .featured .featured-work-item .header {
   width: 100%;
   height: 300px;
@@ -82,6 +110,14 @@ body .featured .featured-work-item .header {
   color: white;
   position: relative;
   margin-bottom: 30px;
+}
+
+body .featured .featured-work-item .header.border {
+  border: solid #e7b8ef 1px;
+}
+
+body .featured .featured-work-item .header .caption.nogradient {
+  background: none;
 }
 
 body .featured .featured-work-item .header .caption {
@@ -96,6 +132,11 @@ body .featured .featured-work-item .header .caption {
 
 body .featured .featured-work-item .header .caption h3, body .featured .featured-work-item .header .caption h4 {
   margin: 0;
+  line-height: 140%;
+}
+
+body .featured .featured-work-item .header .caption h3 {
+  display: inline-block;
 }
 
 body .featured .featured-work-item .header .caption h4 {
@@ -106,7 +147,9 @@ body .featured .featured-work-item .header .caption h4 {
 }
 
 body .featured .featured-work-item p {
-  font-size: 18px;
+  font-size: 16px;
+  text-align: justify;
+  text-justfy: inter-word;
 }
 
 body .featured .divider {
