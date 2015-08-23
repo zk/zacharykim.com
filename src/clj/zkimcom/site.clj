@@ -207,7 +207,7 @@
         [:h3.nowrap "pair.io"]]]
       [:h4 "Clojure, Ruby, Cljs, MongoDB"]
       [:p "On-demand, collaboration-friendly dev environments for your github repo."]
-      [:p "Pair.io was a web app that helped you collaborate on software projects. It would analyze your GitHub repo, and provision an EC2 instance with the required tools, dependencies, and SSH access for anyone you'd like to collaborate with."]
+      [:p "Pair.io was a web app that helped you collaborate on software projects. It would analyze a provided GitHub repo, and provision an EC2 instance with the required tools, dependencies, and SSH access for anyone you'd like to collaborate with."]
       [:p [:a {:href "https://youtu.be/YbQb_8EdfU8"} "Video"]]
       ]]]])
 
