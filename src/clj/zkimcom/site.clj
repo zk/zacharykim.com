@@ -28,7 +28,18 @@
                :white-space 'nowrap}]
     [:.above-fold
      {:padding-top "50px"
-      :min-height "100%"}]
+      :min-height "100%"
+      :position 'relative
+      :padding-bottom "70px"}
+     [:.scroll-down
+      {:position 'absolute
+       :bottom 0
+       :left 0
+       :right 0
+       :text-align 'center
+       :padding-bottom "20px"
+       :font-size "22px"
+       :color "#ddd"}]]
     [:.callout {:margin-bottom "60px"}]
     [:.contact-items
      {:text-align 'left}
@@ -47,7 +58,8 @@
        :margin "0 30px"}]]
 
     [:.nav
-     {:margin-bottom "25px"}
+     {:margin-bottom "25px"
+      :visibility 'hidden}
      [:ul
       {:padding-left 0}
       [:li {:display 'inline-block
@@ -122,8 +134,11 @@
                 :text-transform 'uppercase
                 :font-size "22px"}]]
     [:.contact-items
-     {:text-align 'center}
-     [:.contact {:display 'inline-block}
+     {:text-align 'center
+      :padding "40px"}
+     [:.contact
+      {:display 'inline-block
+       :margin-bottom "40px"}
       [:img {:margin-top 0}]]]]])
 
 (defn featured-section []
@@ -241,7 +256,9 @@
             [:div.contact
              [:img.contact-logo {:src "images/linkedin-logo.png"}]
              [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]
-            ]]]]]]]
+            ]]]]]]
+      [:div.scroll-down
+       "⤓"]]
      #_[:div.section.about
         [:h2 "About Me"]
         [:div.container
@@ -252,8 +269,8 @@
      [:div.footer
       [:div.row
        [:div.col-sm-12
-        [:div.nav
-         [:a {:href "#"} "⤒"]]
+        #_[:div.nav
+           [:a {:href "#"} "⤒"]]
         [:div.contact-items
          [:div.contact
           [:a {:href "mailto:zachary.kim@gmail.com"}

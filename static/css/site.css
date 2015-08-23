@@ -44,6 +44,19 @@ body .redact {
 body .above-fold {
   padding-top: 50px;
   min-height: 100%;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+body .above-fold .scroll-down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 22px;
+  color: #ddd;
 }
 
 body .callout {
@@ -79,6 +92,7 @@ body .contact-items .contact-logo {
 
 body .nav {
   margin-bottom: 25px;
+  visibility: hidden;
 }
 
 body .nav ul {
@@ -209,10 +223,12 @@ body .featured .mockdbs .header .caption {
 
 .footer .contact-items {
   text-align: center;
+  padding: 40px;
 }
 
 .footer .contact-items .contact {
   display: inline-block;
+  margin-bottom: 40px;
 }
 
 .footer .contact-items .contact img {
