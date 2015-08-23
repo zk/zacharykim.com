@@ -10,4 +10,5 @@
 
 (enable-console-print!)
 
-(defn reload-hook [])
+(defn reload-hook []
+  (prn "RELOADING"))

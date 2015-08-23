@@ -30,8 +30,17 @@
      {:padding-top "50px"
       :min-height "100%"}]
     [:.callout {:margin-bottom "60px"}]
-    [:.contact
+    [:.contact-items
      {:text-align 'left}
+     [:.contact {:display 'block
+                 :margin-bottom "30px"}
+      #_[:&.active {:transform "translateY(30px)"}]
+      [:img {:vertical-align 'middle
+             :display 'inline-block
+             :margin-top "-4px"}]
+      [:a {:font-size "18px"
+           :line-height "100%"
+           :display 'inline-block}]]
      [:.contact-logo
       {:height "30px"
        :margin-left 0
@@ -52,7 +61,7 @@
      {:margin-bottom "500px"}
      [:h2 {:background-color "#FF5722"}]]
     [:.featured
-     [:h2 {:background-color "#9C27B0"
+     [:h2 {:background-color "#FF5722" #_"#9C27B0"
            :margin-bottom "80px"}]
      [:.featured-work-item
       [:&.light
@@ -102,7 +111,20 @@
                  :opacity 0.3}]
      [:.mockdbs
       [:.header {:color "black"}
-       [:.caption {:background "linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1))"}]]]]]])
+       [:.caption {:background "linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1))"}]]]]]
+   [:.footer
+    {:background-color "#333"
+     :color 'white
+     :padding "30px"
+     :text-align 'center}
+    [:.nav [:a {:color 'white
+                :font-weight 300
+                :text-transform 'uppercase
+                :font-size "22px"}]]
+    [:.contact-items
+     {:text-align 'center}
+     [:.contact {:display 'inline-block}
+      [:img {:margin-top 0}]]]]])
 
 (defn featured-section []
   [:div.section.featured
@@ -118,7 +140,7 @@
       [:h4 "Havana, July 2015"]
       [:p "I was given the opportunity to speak at the "
        [:a {:href "http://www.meetup.com/merchise/events/223604638/"} "Merchise Startup Circle's July 2015 event"]
-       " about my experiences as CTO of Zaarly and an Entrepreneur in Silicon Valley. Topics covered included Zaarly's technical stack and processes, early-stage product approaches, securing angel and VC funding, and which snack foods are most associated with exponential growth curves."]]
+       " about my experiences as CTO of Zaarly, and about Entrepreneurial life in Silicon Valley. Topics covered included Zaarly's technical stack and processes, early-stage product approaches, securing angel and VC funding, and which snack foods cause exponential growth."]]
      [:div.divider]
      [:div.featured-work-item
       [:div.header {:style "background-image: url('/images/recent_projects/celltracker.png');"}
@@ -170,11 +192,14 @@
         [:h3.nowrap "pair.io"]]]
       [:h4 "Clojure, Ruby, Cljs, MongoDB"]
       [:p "On-demand, collaboration-friendly dev environments for your github repo."]
-      [:p [:a {:href "https://youtu.be/YbQb_8EdfU8"} "Video"]]]]]])
+      [:p "Pair.io was a web app that helped you collaborate on software projects. It would analyze your GitHub repo, and provision an EC2 instance with the required tools, dependencies, and SSH access for anyone you'd like to collaborate with."]
+      [:p [:a {:href "https://youtu.be/YbQb_8EdfU8"} "Video"]]
+      ]]]])
 
 (def index
   (hp/html5
     [:head
+     [:meta {:charset "utf-8"}]
      [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}]
      [:link {:rel "stylesheet" :href "http://fonts.googleapis.com/css?family=Lato:400,700,300"}]
      [:link {:rel "stylesheet" :href "css/site.css"}]]
@@ -203,19 +228,45 @@
              " "
              [:span.nowrap "San Francisco, CA"]
              "."]]
-           [:div.contact
-            [:img.contact-logo {:src "images/email-logo.png"}]
-            [:img.contact-logo {:src "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"}]
-            [:img.contact-logo {:src "images/twitter-logo.png"}]
-            [:img.contact-logo {:src "images/linkedin-logo.png"}]
+           [:div.contact-items
+            [:div.contact
+             [:img.contact-logo {:src "images/email-logo.png"}]
+             [:a {:href "mailto:zachary.kim@gmail.com"} "zachary.kim@gmail.com"]]
+            [:div.contact
+             [:img.contact-logo {:src "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"}]
+             [:a {:href "https://github.com/zk"} "zk"]]
+            [:div.contact
+             [:img.contact-logo {:src "images/twitter-logo.png"}]
+             [:a {:href "https://twitter.com/heyzk"} "@heyzk"]]
+            [:div.contact
+             [:img.contact-logo {:src "images/linkedin-logo.png"}]
+             [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]
             ]]]]]]]
-     [:div.section.about
-      [:h2 "About Me"]
-      [:div.container
-       [:div.col-sm-12.col-md-10.col-md-offset-1
-        ]]]
+     #_[:div.section.about
+        [:h2 "About Me"]
+        [:div.container
+         [:div.col-sm-12.col-md-10.col-md-offset-1
+          ]]]
      (featured-section)
-     (repeat 20 [:br])
+     (repeat 10 [:br])
+     [:div.footer
+      [:div.row
+       [:div.col-sm-12
+        [:div.nav
+         [:a {:href "#"} "⤒"]]
+        [:div.contact-items
+         [:div.contact
+          [:a {:href "mailto:zachary.kim@gmail.com"}
+           [:img.contact-logo {:src "images/email-logo-light.png"}]]]
+         [:div.contact
+          [:a {:href "https://github.com/zk"}
+           [:img.contact-logo {:src "/images/github-logo-light.png"}]]]
+         [:div.contact
+          [:a {:href "https://twitter.com/heyzk"}
+           [:img.contact-logo {:src "images/twitter-logo.png"}]]]
+         [:div.contact
+          [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"}
+           [:img.contact-logo {:src "images/linkedin-logo.png"}]]]]]]]
      [:script {:type "text/javascript" :src "cljs/app.js"}]]))
 
 (def pages
